@@ -35,6 +35,7 @@ namespace Challenge.PreAceleracion
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Challenge.PreAceleracion", Version = "v1" });
             });
 
+            services.AddEntityFrameworkSqlServer();
             services.AddDbContextPool<ChallengeContext>((services, options) =>
                 {
                     options.UseInternalServiceProvider(services);
