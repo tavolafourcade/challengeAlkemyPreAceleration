@@ -12,6 +12,7 @@ namespace Challenge.PreAceleracion.Entities
         public string Denomination { get; set; }
 
         // Relation to Cities
+        // Primera forma de establecer relaciones
         public ICollection<City> Cities { get; set; }
     }
 }

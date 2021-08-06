@@ -15,6 +15,7 @@ namespace Challenge.PreAceleracion.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("icons")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -64,6 +65,14 @@ namespace Challenge.PreAceleracion.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Continents");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Denomination = "Europa",
+                            Image = "TestImage"
+                        });
                 });
 
             modelBuilder.Entity("Challenge.PreAceleracion.Entities.GeographicIcons", b =>
