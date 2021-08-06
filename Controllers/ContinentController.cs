@@ -20,7 +20,10 @@ namespace Challenge.PreAceleracion.Controllers
         }
         // Método GET va a obtener info y devolverla
         [HttpGet]
-        public async Task<IActionResult> Get()
+        [Route("ObtenerContinentes")] //Renombrando la ruta
+        // [Route("ObtenerContinentes:{id}")] implicaría que la ruta cambiaría a .../ObtenerContinentes/1 y sería requerido. Este es parámetro de ruta
+        public async Task<IActionResult> Get(string id, int value) // Este es parámetro de consulta
+            //Los metodos GET no tienen cuerpo de peticion
         {
             var continent = await _challengeContext.Continents.FirstOrDefaultAsync();
             return Ok();
